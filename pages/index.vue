@@ -1,27 +1,5 @@
 <script setup>
-const projects = [
-  {
-    id: 1,
-    title: "Teste de Projeto",
-    description: "Descriçã de teste.",
-    image: "https://placehold.co/600x400/png",
-    tags: ["Vue.js", "PHP", "MySQL", "UX Design"],
-  },
-  {
-    id: 2,
-    title: "Teste de Projeto 2",
-    description: "Descriçã de teste.",
-    image: "https://placehold.co/600x400/png",
-    tags: ["Vue.js", "Cordova", "TypeScript"],
-  },
-  {
-    id: 3,
-    title: "Teste de Projeto 3",
-    description: "Descriçã de teste.",
-    image: "https://placehold.co/600x400/png",
-    tags: ["HTML", "Sass", "JavaScript"],
-  },
-];
+import { projects } from "~/data/projects.js";
 </script>
 
 <template>

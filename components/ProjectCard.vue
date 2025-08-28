@@ -8,8 +8,9 @@ defineProps({
 </script>
 
 <template>
-  <div
-    class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-sky-400/20"
+  <NuxtLink
+    :to="`/projetos/${project.slug}`"
+    class="block bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-sky-400/20"
   >
     <div class="overflow-hidden">
       <img
@@ -31,5 +32,5 @@ defineProps({
         </span>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
