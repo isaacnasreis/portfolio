@@ -1,3 +1,29 @@
+<script setup>
+const projects = [
+  {
+    id: 1,
+    title: "Teste de Projeto",
+    description: "Descriçã de teste.",
+    image: "https://placehold.co/600x400/png",
+    tags: ["Vue.js", "PHP", "MySQL", "UX Design"],
+  },
+  {
+    id: 2,
+    title: "Teste de Projeto 2",
+    description: "Descriçã de teste.",
+    image: "https://placehold.co/600x400/png",
+    tags: ["Vue.js", "Cordova", "TypeScript"],
+  },
+  {
+    id: 3,
+    title: "Teste de Projeto 3",
+    description: "Descriçã de teste.",
+    image: "https://placehold.co/600x400/png",
+    tags: ["HTML", "Sass", "JavaScript"],
+  },
+];
+</script>
+
 <template>
   <div>
     <section
@@ -19,9 +45,14 @@
 
     <section id="projetos" class="py-20">
       <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold">Meus Projetos</h2>
-        <div class="mt-8 p-16 bg-slate-800 rounded-lg">
-          [Placeholder para a vitrine de projetos]
+        <h2 class="text-4xl font-bold mb-12">Meus Projetos</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <ProjectCard
+            v-for="project in projects"
+            :key="project.id"
+            :project="project"
+          />
         </div>
       </div>
     </section>
