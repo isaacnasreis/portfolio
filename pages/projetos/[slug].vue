@@ -5,6 +5,11 @@ const route = useRoute();
 const slug = route.params.slug;
 
 const project = projects.find((p) => p.slug === slug);
+
+useHead({
+  title: `Projeto: ${project.title} | Isaac Reis`,
+  meta: [{ name: "description", content: project.description }],
+});
 </script>
 
 <template>
@@ -19,6 +24,33 @@ const project = projects.find((p) => p.slug === slug);
         >
           {{ tag }}
         </span>
+      </div>
+      <span
+        class="bg-yellow-900/50 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full ml-4"
+        v-if="project.status === 'Em Construção'"
+      >
+        {{ project.status }}
+      </span>
+
+      <div class="flex items-center gap-4 my-8">
+        <a
+          v-if="project.liveUrl && project.liveUrl !== '#'"
+          :href="project.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300"
+        >
+          Ver ao Vivo
+        </a>
+        <a
+          v-if="project.repoUrl && project.repoUrl !== '#'"
+          :href="project.repoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300"
+        >
+          Ver Código
+        </a>
       </div>
       <img
         :src="project.image"

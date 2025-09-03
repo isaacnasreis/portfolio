@@ -23,6 +23,17 @@ const competencies = [
       "Minha paixão por desenho e artes visuais me dá um olhar apurado para a estética, a composição e os detalhes da interface.",
   },
 ];
+
+useHead({
+  title: "Portfólio | Isaac Reis - Desenvolvedor Full-Stack",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Portfólio de Isaac Reis, desenvolvedor Full-Stack especializado na criação de aplicações web modernas e de alta qualidade.",
+    },
+  ],
+});
 </script>
 
 <template>
@@ -41,6 +52,10 @@ const competencies = [
           Apaixonado por criar soluções digitais que unem funcionalidade, design
           e uma ótima experiência para o usuário.
         </p>
+
+        <div class="mt-8">
+          <SocialLinks />
+        </div>
       </div>
     </section>
 
@@ -95,7 +110,7 @@ const competencies = [
           <div class="md:col-span-5">
             <div class="bg-slate-700 rounded-lg p-6">
               <img
-                src="https://via.placeholder.com/400x500.png/1e293b/ffffff?text=Isaac+Reis"
+                src="https://avatars.githubusercontent.com/u/118864462?v=4"
                 alt="Foto de Isaac Reis"
                 class="rounded-lg w-full h-auto shadow-lg"
               />
