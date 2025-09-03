@@ -1,5 +1,28 @@
 <script setup>
 import { projects } from "~/data/projects.js";
+
+const competencies = [
+  {
+    title: "Desenvolvedor Full-Stack",
+    description:
+      "Crio aplicações web completas, do front-end ao back-end, focando em performance e escalabilidade.",
+  },
+  {
+    title: "UX Engineer",
+    description:
+      "Atuo como ponte entre o design e o desenvolvimento, garantindo que a experiência do usuário seja fiel à visão inicial.",
+  },
+  {
+    title: "Programador Criativo",
+    description:
+      "Utilizo a lógica da programação para resolver problemas de forma inovadora e eficiente, sempre buscando a melhor solução.",
+  },
+  {
+    title: "Artista Digital",
+    description:
+      "Minha paixão por desenho e artes visuais me dá um olhar apurado para a estética, a composição e os detalhes da interface.",
+  },
+];
 </script>
 
 <template>
@@ -21,7 +44,17 @@ import { projects } from "~/data/projects.js";
       </div>
     </section>
 
-    <section id="projetos" class="py-20">
+    <section
+      id="projetos"
+      class="py-20"
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visibleOnce="{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 500, type: 'spring', stiffness: '100' },
+      }"
+    >
       <div class="container mx-auto text-center">
         <h2 class="text-4xl font-bold mb-12">Meus Projetos</h2>
 
@@ -30,12 +63,29 @@ import { projects } from "~/data/projects.js";
             v-for="project in projects"
             :key="project.id"
             :project="project"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visibleOnce="{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 400, delay: index * 100 },
+            }"
           />
         </div>
       </div>
     </section>
 
-    <section id="sobre" class="py-20 bg-slate-800">
+    <section
+      id="sobre"
+      class="py-20 bg-slate-800"
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visibleOnce="{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 500, type: 'spring', stiffness: '100' },
+      }"
+    >
       <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-12">
           Sobre <span class="text-sky-400">Mim</span>
@@ -82,27 +132,34 @@ import { projects } from "~/data/projects.js";
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <CompetencyCard
-              title="Desenvolvedor Full-Stack"
-              description="Crio aplicações web completas, do front-end ao back-end, focando em performance e escalabilidade."
-            />
-            <CompetencyCard
-              title="UX Engineer"
-              description="Atuo como ponte entre o design e o desenvolvimento, garantindo que a experiência do usuário seja fiel à visão inicial."
-            />
-            <CompetencyCard
-              title="Programador Criativo"
-              description="Utilizo a lógica da programação para resolver problemas de forma inovadora e eficiente, sempre buscando a melhor solução."
-            />
-            <CompetencyCard
-              title="Artista Digital"
-              description="Minha paixão por desenho e artes visuais me dá um olhar apurado para a estética, a composição e os detalhes da interface."
+              v-for="(card, index) in competencies"
+              :key="card.title"
+              :title="card.title"
+              :description="card.description"
+              v-motion
+              :initial="{ opacity: 0, y: 50 }"
+              :visibleOnce="{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 400, delay: index * 100 },
+              }"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="py-20">
+    <section
+      id="contato"
+      class="py-20"
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visibleOnce="{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 500, type: 'spring', stiffness: '100' },
+      }"
+    >
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div class="md:col-span-5">
