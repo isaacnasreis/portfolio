@@ -132,10 +132,10 @@ const competencies = [
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <CompetencyCard
-              v-for="(card, index) in competencies"
-              :key="card.title"
-              :title="card.title"
-              :description="card.description"
+              v-for="(competency, index) in competencies"
+              :key="competency.title"
+              :title="competency.title"
+              :description="competency.description"
               v-motion
               :initial="{ opacity: 0, y: 50 }"
               :visibleOnce="{

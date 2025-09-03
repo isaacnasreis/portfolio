@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-slate-900 text-white min-h-screen flex flex-col">
+  <div class="text-white min-h-screen flex flex-col relative overflow-hidden">
+    <InteractiveBackground />
+
     <AppHeader />
 
-    <main class="flex-grow">
-      <slot />
-    </main>
+    <main class="flex-grow z-10"><slot /></main>
 
     <AppFooter />
   </div>
