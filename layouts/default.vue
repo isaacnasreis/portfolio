@@ -4,7 +4,7 @@
 
     <AppHeader />
 
-    <main class="flex-grow z-10"><slot /></main>
+    <main class="flex-grow z-10 pt-20"><slot /></main>
 
     <AppFooter />
   </div>
