@@ -40,15 +40,15 @@ useHead({
   <div>
     <section
       id="inicio"
-      class="container mx-auto min-h-[80vh] flex items-center"
+      class="container mx-auto px-4 lg:px-8 min-h-[75vh] md:min-h-[80vh] flex items-center"
     >
       <div class="text-left">
-        <h1 class="text-6xl font-extrabold leading-tight">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-extrabold leading-tight">
           <span class="block text-slate-300">Olá, eu sou</span>
           <span class="block text-white">Isaac Reis.</span>
           <span class="block text-sky-400">Desenvolvedor Full-Stack</span>
         </h1>
-        <p class="mt-6 max-w-2xl text-xl text-slate-400">
+        <p class="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl 2xl:text-2xl text-slate-400">
           Apaixonado por criar soluções digitais que unem funcionalidade, design
           e uma ótima experiência para o usuário.
         </p>
@@ -61,7 +61,7 @@ useHead({
 
     <section
       id="projetos"
-      class="py-20"
+      class="py-16 md:py-20 2xl:py-28"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :visibleOnce="{
@@ -70,10 +70,10 @@ useHead({
         transition: { duration: 500, type: 'spring', stiffness: '100' },
       }"
     >
-      <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-12">Meus Projetos</h2>
+      <div class="container mx-auto px-4 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl 2xl:text-5xl font-bold mb-10 md:mb-12">Meus Projetos</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 xl:gap-10">
           <ProjectCard
             v-for="project in projects"
             :key="project.id"
@@ -92,7 +92,7 @@ useHead({
 
     <section
       id="sobre"
-      class="py-20 bg-slate-800"
+      class="py-16 md:py-20 2xl:py-28 bg-slate-800"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :visibleOnce="{
@@ -101,12 +101,12 @@ useHead({
         transition: { duration: 500, type: 'spring', stiffness: '100' },
       }"
     >
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12">
+      <div class="container mx-auto px-4 lg:px-8">
+        <h2 class="text-3xl md:text-4xl 2xl:text-5xl font-bold text-center mb-10 md:mb-12">
           Sobre <span class="text-sky-400">Mim</span>
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
           <div class="md:col-span-5">
             <div class="bg-slate-700 rounded-lg p-6">
               <img
@@ -117,7 +117,7 @@ useHead({
             </div>
           </div>
 
-          <div class="md:col-span-7 prose prose-invert prose-lg max-w-none">
+          <div class="md:col-span-7 prose prose-invert prose-base md:prose-lg 2xl:prose-xl max-w-none">
             <p>
               Sou um desenvolvedor Full-Stack apaixonado por criar soluções
               digitais que unem funcionalidade e experiência do usuário. Minha
@@ -142,10 +142,10 @@ useHead({
         </div>
 
         <div class="mt-20">
-          <h3 class="text-3xl font-bold text-center mb-10">
+          <h3 class="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center mb-8 md:mb-10">
             Minhas Competências
           </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <CompetencyCard
               v-for="(competency, index) in competencies"
               :key="competency.title"
@@ -166,7 +166,7 @@ useHead({
 
     <section
       id="contato"
-      class="py-20"
+      class="py-16 md:py-20 2xl:py-28"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :visibleOnce="{
@@ -175,11 +175,11 @@ useHead({
         transition: { duration: 500, type: 'spring', stiffness: '100' },
       }"
     >
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           <div class="md:col-span-5">
-            <h2 class="text-4xl font-bold mb-4">Vamos conversar.</h2>
-            <p class="text-slate-400 mb-8 max-w-md">
+            <h2 class="text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4">Vamos conversar.</h2>
+            <p class="text-slate-400 text-base md:text-lg mb-8 max-w-md">
               Se você tem um projeto em mente, uma oportunidade de trabalho ou
               simplesmente quer trocar uma ideia, não hesite em me contatar.
             </p>
@@ -210,7 +210,7 @@ useHead({
                   </svg>
                 </span>
                 <span
-                  class="text-lg text-white group-hover:text-sky-400 transition-colors"
+                  class="text-base md:text-lg 2xl:text-xl text-white group-hover:text-sky-400 transition-colors break-all"
                   >isaacreisn@gmail.com</span
                 >
               </a>
@@ -233,7 +233,7 @@ useHead({
                     ></path>
                   </svg>
                 </span>
-                <span class="text-lg text-white">+55 (31) 97152-4933</span>
+                <span class="text-base md:text-lg 2xl:text-xl text-white">+55 (31) 97152-4933</span>
               </div>
               <div class="flex items-center gap-4 group">
                 <span class="border border-slate-700 rounded-full p-2">
@@ -254,12 +254,12 @@ useHead({
                     ></path>
                   </svg>
                 </span>
-                <span class="text-lg text-white">+55 (31) 99225-7835</span>
+                <span class="text-base md:text-lg 2xl:text-xl text-white">+55 (31) 99225-7835</span>
               </div>
             </div>
           </div>
 
-          <div class="md:col-span-7 bg-slate-800 p-8 rounded-lg">
+          <div class="md:col-span-7 bg-slate-800 p-6 md:p-8 rounded-lg">
             <ContactForm />
           </div>
         </div>

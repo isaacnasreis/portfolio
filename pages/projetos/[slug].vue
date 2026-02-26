@@ -13,9 +13,9 @@ useHead({
 </script>
 
 <template>
-  <div class="container mx-auto py-12">
+  <div class="container mx-auto py-10 md:py-12 2xl:py-16 px-4 lg:px-8">
     <div v-if="project">
-      <h1 class="text-5xl font-bold text-white mb-4">{{ project.title }}</h1>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-white mb-4">{{ project.title }}</h1>
       <div class="flex flex-wrap gap-2 mb-8">
         <span
           v-for="tag in project.tags"
@@ -32,13 +32,13 @@ useHead({
         {{ project.status }}
       </span>
 
-      <div class="flex items-center gap-4 my-8">
+      <div class="flex flex-wrap items-center gap-3 md:gap-4 my-8">
         <a
           v-if="project.liveUrl && project.liveUrl !== '#'"
           :href="project.liveUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300"
+          class="inline-block bg-sky-600 hover:bg-sky-700 text-white text-sm md:text-base font-bold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition-colors duration-300"
         >
           Ver ao Vivo
         </a>
@@ -47,7 +47,7 @@ useHead({
           :href="project.repoUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300"
+          class="inline-block bg-slate-700 hover:bg-slate-600 text-white text-sm md:text-base font-bold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition-colors duration-300"
         >
           Ver Código
         </a>
@@ -57,7 +57,7 @@ useHead({
         :alt="`Imagem do ${project.title}`"
         class="w-full max-w-4xl mx-auto rounded-lg shadow-lg mb-8"
       />
-      <div class="prose prose-invert prose-lg max-w-4xl mx-auto">
+      <div class="prose prose-invert prose-base md:prose-lg 2xl:prose-xl max-w-4xl mx-auto">
         <p>{{ project.description }}</p>
         <p>
           Aqui vou detalhar os desafios, as tecnologias utilizadas, a
@@ -67,7 +67,7 @@ useHead({
       </div>
     </div>
     <div v-else>
-      <h1 class="text-4xl text-center text-red-500">Projeto não encontrado!</h1>
+      <h1 class="text-2xl md:text-4xl text-center text-red-500">Projeto não encontrado!</h1>
     </div>
   </div>
 </template>

@@ -4,7 +4,9 @@
 
     <AppHeader />
 
-    <main class="flex-grow z-10 pt-20"><slot /></main>
+    <main class="flex-grow z-10" style="padding-top: var(--app-header-height)">
+      <slot />
+    </main>
 
     <AppFooter />
   </div>

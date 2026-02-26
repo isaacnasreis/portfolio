@@ -1,8 +1,15 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick, watch } from "vue";
 
 const isDark = ref(true);
 const isMenuOpen = ref(false);
+const headerRef = ref(null);
+
+function updateHeaderHeight() {
+  if (typeof document === "undefined" || !headerRef.value) return;
+  const height = `${headerRef.value.offsetHeight}px`;
+  document.documentElement.style.setProperty("--app-header-height", height);
+}
 
 function applyTheme(theme) {
   if (typeof document === "undefined") return;
@@ -27,14 +34,26 @@ function closeMenu() {
   isMenuOpen.value = false;
 }
 
+watch(isMenuOpen, async () => {
+  await nextTick();
+  updateHeaderHeight();
+});
+
 onMounted(() => {
   const storedTheme = localStorage.getItem("portfolio-theme");
   applyTheme(storedTheme === "light" ? "light" : "dark");
+  updateHeaderHeight();
+  window.addEventListener("resize", updateHeaderHeight);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateHeaderHeight);
 });
 </script>
 
 <template>
   <header
+    ref="headerRef"
     class="fixed top-0 left-0 w-full bg-slate-900/80 backdrop-blur-sm z-50 border-b border-slate-700 shadow-lg"
   >
     <nav class="container mx-auto p-4">
